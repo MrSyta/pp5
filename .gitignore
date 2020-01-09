@@ -1,0 +1,3 @@
+Pipfile.lock
+
+return [number for number in numbers if number % diviser == 0]
