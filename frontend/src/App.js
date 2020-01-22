@@ -12,7 +12,7 @@ class App extends React.Component {
   
   componentDidMount() {
     axios.get('http://127.0.0.1:8000/books/?format=json')
-      .then(res => console.log(res.data))
+      .then(res => this.setState({ books: res.data}))
   }
 
   render() {
