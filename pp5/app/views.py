@@ -20,4 +20,5 @@ class BookView(viewsets.ModelViewSet):
             self.queryset = Book.objects.filter(published=published)
             return self.queryset
         else:
+            self.queryset = Book.objects.all()
             return self.queryset
