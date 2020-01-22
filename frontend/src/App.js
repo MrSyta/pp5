@@ -2,7 +2,7 @@ import React from 'react';
 import Bookshop from './components/Bookshop';
 import Header from './components/layout/Header';
 import './App.css';
-import axios from 'axios'
+import axios from 'axios';
 
 
 class App extends React.Component {

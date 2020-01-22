@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export class Book extends Component {
+
     click = () => {
         //DESTRUCTURING
         const { id, name, genre, price } = this.props.books
@@ -15,15 +16,27 @@ export class Book extends Component {
     render() {
         const { name } = this.props.books
         return (
-            <div>
+            // <div class="card" style="width: 18rem;">
+            //     <img class="card-img-top" src="..." alt="Card image cap" />
+            //     <div class="card-body">
+            //         <h5 class="card-title">Card title</h5>
+            //         <p class="card-text">Description</p>
+            //         <a href="#" class="btn btn-primary">Go somewhere</a>
+            //     </div>
+            // </div>
+            
+            <div>    
                 <h2>{name}<span className="badge badge-secondary">New!!</span></h2>
                 <button className="btn btn-success" onClick={this.click()}>Add to basket</button>
             </div>
+
             //<div style={style}>    
             //</div>
         )
     }
 }
+
+
 
 //PROPTYPES
 Book.propTypes = {
