@@ -14,21 +14,23 @@ export class Book extends Component {
     }
 
     render() {
-        const { name } = this.props.books
+        const { title, cover, description } = this.props.books
         return (
-            // <div class="card" style="width: 18rem;">
-            //     <img class="card-img-top" src="..." alt="Card image cap" />
-            //     <div class="card-body">
-            //         <h5 class="card-title">Card title</h5>
-            //         <p class="card-text">Description</p>
-            //         <a href="#" class="btn btn-primary">Go somewhere</a>
-            //     </div>
-            // </div>
-            
-            <div>    
-                <h2>{name}<span className="badge badge-secondary">New!!</span></h2>
-                <button className="btn btn-success" onClick={this.click()}>Add to basket</button>
+            <div className="card-decks" style={{display: 'inline', height: '25rem'}}>
+            <div className="card" style={cardStyle} >
+                <img className="card-img-top" src={cover} alt="IMG NOT WORKING" style={imgStyle} />
+                <div className="card-body">
+                    <h5 className="card-title">{title}</h5>
+                    <p className="card-text">{description}</p>
+                    <button className="btn btn-success" onClick={this.click()}>Add to basket</button>
+                </div>
             </div>
+            </div>
+            
+            // <div>    
+            //     <h2>{title}</h2>
+            //     <button className="btn btn-success" onClick={this.click()}>Add to basket</button>
+            // </div>
 
             //<div style={style}>    
             //</div>
@@ -36,7 +38,23 @@ export class Book extends Component {
     }
 }
 
+const cardStyle = {
+    width: '25rem',
+    display: 'inline-block',
+    marginLeft: '1rem',
+    marginRight: '1rem',
+    marginTop: '1rem',
+    marginBottom: '1rem',
+}
 
+const imgStyle = {
+    marginTop: '2rem',
+    width: 260,
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    flexDirection: 'column'
+}
 
 //PROPTYPES
 Book.propTypes = {

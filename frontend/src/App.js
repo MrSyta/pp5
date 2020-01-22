@@ -1,6 +1,7 @@
 import React from 'react';
 import Bookshop from './components/Bookshop';
 import Header from './components/layout/Header';
+import Basket from './components/Basket';
 import './App.css';
 import axios from 'axios';
 
@@ -19,7 +20,8 @@ class App extends React.Component {
   return (
     <div className="App">
       <Header />
-      <Bookshop books={this.state.books}/>
+      <Basket />
+      <Bookshop books={this.state.books}/>      
     </div>
   );
   }
