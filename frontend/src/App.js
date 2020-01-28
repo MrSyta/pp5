@@ -1,14 +1,15 @@
 import React from 'react';
 import Bookshop from './components/Bookshop';
 import Header from './components/layout/Header';
-import Basket from './components/Basket';
+import Body from './components/layout/Body';
 import './App.css';
 import axios from 'axios';
 
 
 class App extends React.Component {
   state = {
-    books: []
+    books: [],
+    cart: []
   }
   
   componentDidMount() {
@@ -16,12 +17,14 @@ class App extends React.Component {
       .then(res => this.setState({ books: res.data}))
   }
 
+
+
   render() {
   return (
     <div className="App">
       <Header />
-      <Basket />
-      <Bookshop books={this.state.books}/>      
+      <Body />
+      <Bookshop books={this.state.books}/>
     </div>
   );
   }
