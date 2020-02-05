@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_swagger',
-    'pp5.app',
+    'pp5.books',
 ]
 
 MIDDLEWARE = [

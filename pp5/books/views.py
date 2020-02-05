@@ -9,12 +9,17 @@ from .serializers import BookSerializer
 
 
 class BookView(viewsets.ModelViewSet):
-    queryset = Book.objects.all()
     serializer_class = BookSerializer
-
 
     def get_queryset(self):
         req = self.request
+        cart = req.session.get('cart')
+        if not cart:
+            from random import sample
+            cart = ''.join(sample('abcdefghijklmnop', 5))
+            req.session['cart'] = cart
+            print('New cart:', cart)
+        print(cart)
         published = req.query_params.get('published')
         title = req.query_params.get('title')
         if published:

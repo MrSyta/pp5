@@ -23,5 +23,5 @@ schema_view = get_swagger_view(title='My API')
 urlpatterns = [
     path('api/', schema_view),
     path('admin/', admin.site.urls),
-    path('', include('pp5.app.urls'))
+    path('', include('pp5.books.urls'))
 ]
