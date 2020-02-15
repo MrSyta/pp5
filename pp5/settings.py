@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_swagger',
     'pp5.books',
+    'pp5.busket',
 ]
 
 MIDDLEWARE = [

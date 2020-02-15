@@ -1,8 +1,4 @@
-from django.shortcuts import render
 from rest_framework import viewsets
-from rest_framework.response import Response
-from rest_framework.decorators import action
-
 
 from .models import Book
 from .serializers import BookSerializer
@@ -13,13 +9,13 @@ class BookView(viewsets.ModelViewSet):
 
     def get_queryset(self):
         req = self.request
-        cart = req.session.get('cart')
-        if not cart:
-            from random import sample
-            cart = ''.join(sample('abcdefghijklmnop', 5))
-            req.session['cart'] = cart
-            print('New cart:', cart)
-        print(cart)
+        # cart = req.session.get('cart')
+        # if not cart:
+        #     from random import sample
+        #     cart = ''.join(sample('abcdefghijklmnop', 5))
+        #     req.session['cart'] = cart
+        #     print('New cart:', cart)
+        # print(cart)
         published = req.query_params.get('published')
         title = req.query_params.get('title')
         if published:
