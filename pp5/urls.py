@@ -16,12 +16,12 @@ Including another URLconf
 from django.urls import path, include
 from rest_framework import routers
 from .books.views import BookView
-from .busket.views import BusketView
 
 
 router = routers.DefaultRouter()
 router.register('books', BookView, basename='books')
-router.register('busket', BusketView)
+
+# router.register('busket', BusketView)
 
 urlpatterns = [
     path('', include(router.urls)),

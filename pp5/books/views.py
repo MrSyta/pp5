@@ -8,7 +8,8 @@ class BookView(viewsets.ModelViewSet):
     serializer_class = BookSerializer
 
     def get_queryset(self):
-        req = self.request
+        queryset = Book.objects.all()
+
         # cart = req.session.get('cart')
         # if not cart:
         #     from random import sample
@@ -16,14 +17,16 @@ class BookView(viewsets.ModelViewSet):
         #     req.session['cart'] = cart
         #     print('New cart:', cart)
         # print(cart)
-        published = req.query_params.get('published')
-        title = req.query_params.get('title')
+        published = self.request.query_params.get('published')
+        title = self.request.query_params.get('title')
         if published:
-            self.queryset = Book.objects.filter(published=published)
-            return self.queryset
+            queryset = Book.objects.filter(published=published)
+            return queryset
         elif title:
-            self.queryset = Book.objects.filter(title__contains=title)
-            return self.queryset
+            queryset = Book.objects.filter(title__contains=title)
+            return queryset
+        elif published and title:
+             queryset = Book.objects.filter(published=published, title__contains=title)
         else:
-            self.queryset = Book.objects.all()
-            return self.queryset
+            queryset = Book.objects.all()
+            return queryset
