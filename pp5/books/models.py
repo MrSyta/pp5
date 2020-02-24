@@ -8,3 +8,10 @@ class Book(models.Model):
     description = models.TextField(max_length=500, default=None)
     cover = models.URLField(max_length=500, default=None)
     published = models.BooleanField(default=False)
+
+    class Meta:
+        ordering = ['title']
+        db_table = 'books'
+
+    def __str__(self):
+        return self.title
