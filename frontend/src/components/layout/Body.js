@@ -1,10 +1,9 @@
-import React from 'react';
-import Cart from '../Cart';
+import React from "react";
+import Cart from "../Cart";
+import Search from "../Search";
 
 export default function Body() {
-    return (
-        <div>
-            <Cart />
-        </div>
-    )
+  return <div>{/* <Search /> */}</div>;
 }
+
+//UWAGA ODKOMENTOWANIE TEGO SEARCH CRASHUJE KOMPUTER...

@@ -1,19 +1,26 @@
-import React, { Component } from 'react'
-import Book from './Book'
-import PropTypes from 'prop-types'
+import React, { Component } from "react";
+import Book from "./Book";
+import Search from "./Search";
 
-export class Bookshop extends Component {
-    render() {
-        return this.props.books.map((books) => (
-            <Book key={books.id} books={books}/>
-        ))
-    }
+function Bookshop({ books }) {
+  console.log(books);
+  if (books.length) {
+    return books.map(bookObj => {
+      // console.log("books", bookObj); inaczej to by było bookObj.id bookObj.title etcc
+      const { id, title, cover, description, price } = bookObj;
+      return (
+        <Book
+          key={id}
+          cover={cover}
+          title={title}
+          description={description}
+          price={price}
+        />
+      );
+    });
+  } else {
+    return <h1>empty</h1>;
+  }
 }
 
-//PROPTYPES
-Bookshop.propTypes = {
-    books: PropTypes.array.isRequired
-}
-
-export default Bookshop
- 
+export default Bookshop;
