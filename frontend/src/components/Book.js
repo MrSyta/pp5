@@ -14,7 +14,7 @@ function Book({ cover, title, description, price }) {
           {/* <p className="card-text">{description}</p>  STYLE #KAMIL */}
           <h5 className="card-title">{title}</h5>
 
-          <h3 className="card-text">{price} zł</h3>
+          <h3 className="card-text">{price.toFixed(2)} zł</h3>
           <button className="btn btn-success">Add to cart</button>
         </div>
       </div>

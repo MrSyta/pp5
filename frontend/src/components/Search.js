@@ -17,12 +17,12 @@ function Search() {
 
   const handleSubmit = () => {
     response();
-    // console.log(booksCatalogue);
+    console.log(booksCatalogue);
   };
 
   useEffect(() => {
     response();
-    // console.log(booksCatalogue);
+    console.log(booksCatalogue);
   }, []);
   // console.log("catalog", booksCatalogue);
   return (
