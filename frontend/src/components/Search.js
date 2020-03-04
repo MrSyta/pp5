@@ -26,7 +26,7 @@ function Search() {
   }, []);
   // console.log("catalog", booksCatalogue);
   return (
-    <div className="Search">
+    <div style={{background: '#333', paddingTop:"20px"}} className="Search">
       <form className="form-inline active-cyan-3 active-cyan-4">
         <i
           style={searchBarStyle}
@@ -39,7 +39,7 @@ function Search() {
           onChange={handleSubmit}
           className="form-control form-control-sm ml-3 w-75"
           type="text"
-          placeholder="Search"
+          placeholder="Wpisz nazwę upragnionej książki"
           aria-label="Search"
         />
       </form>
@@ -54,6 +54,7 @@ function Search() {
 export default Search;
 
 const searchBarStyle = {
+  marginTop: "5%",
   marginLeft: "10%",
   marginRight: "1%",
   display: "inline"
