@@ -26,7 +26,7 @@ function Search() {
   }, []);
   // console.log("catalog", booksCatalogue);
   return (
-    <div style={{background: '#333', paddingTop:"20px"}} className="Search">
+    <div style={{ background: "#333", paddingTop: "20px" }} className="Search">
       <form className="form-inline active-cyan-3 active-cyan-4">
         <i
           style={searchBarStyle}
